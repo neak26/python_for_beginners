@@ -762,37 +762,6 @@ def deal(num_of_hands, num_of_cards, deck):
     return lists, deck
 
 
-def exercise122(your_str):  # don buna
-    operators = ['+', '-', '*', '/', '(', ')', '^',
-                 '1', '2', '3', '4', '5', '6', '7',
-                 '8', '9', '0']
-    tokenizing = []
-    for i in range(len(your_str)):
-        if i + 2 > len(your_str):
-            break
-        if your_str[i] in operators:
-            if your_str[i] == '+' and your_str[i + 1].isdigit():
-                token = your_str[i] + your_str[i + 1]
-                your_str = your_str[:i] + your_str[i + 2:]
-                tokenizing.append(token)
-            elif your_str[i] == '-' and your_str[i + 1].isdigit():
-                token = your_str[i] + your_str[i + 1]
-                tokenizing.append(token)
-                your_str = your_str[:i] + your_str[i + 2:]
-            else:
-                tokenizing.append(your_str[i])
-    return tokenizing
-
-
-# def exercise123(infix):
-#     operators = []
-#     postfix = []
-#     for i in infix:
-#         if i.isdigit():
-#             postfix.append(i)
-#         if i.isoperator():
-
-
 def exercise125(smaller, larger):
     if len(smaller) == 0 or smaller == larger:
         return True
@@ -806,28 +775,6 @@ def exercise125(smaller, larger):
     if subset == smaller:
         return True
     return False
-
-
-def exercise126(your_list):  # dönecem
-    subset = []
-    subsubset = []
-    if len(your_list) == 0:
-        return subset.append([])
-    subset.append([])
-    k = 0
-    s = 2
-    for i in range(len(your_list)):
-        subset.append([your_list[i]])
-        if s == len(your_list) + 1:
-            break
-        for i in range(s):
-            subsubset.append(your_list[i])
-        k += 1
-        s += 1
-        subset.append(subsubset)
-        subsubset = []
-
-    print(subset)
 
 
 def exercise127(limit):
@@ -915,7 +862,7 @@ def exercise137(word):
     return score
 
 
-def exercise138(): #adamin cozumune bak
+def exercise138(): 
     fig, ax = plt.subplots()
     ax.set_axis_off()
     tb = Table(ax, bbox=[0, 0, 1, 1])
@@ -968,14 +915,11 @@ def exercise138(): #adamin cozumune bak
 
 # --------------CHAPTER 7--------------
 # https://pages.cpsc.ucalgary.ca/~bdstephe/PythonWorkbook/ -- files
-def exercise141(filename): # adamin cozumune bak
+def exercise141(filename): 
     f = open(filename, 'r')
     for i in range(10):
         print(f.readline())
     f.close()
-
-
-# def exercise142(filename): # doncem
 
 def exercise144(filename):
     i = 0
@@ -1052,10 +996,7 @@ def exercise150(infile, outfile):
     input_file.close()
     output_file.close()
 
-#  linecache module allows one to get any line from a Python source file,
-#  while attempting to optimize internally, using a cache
-
-
+    
 def exercise152(user_input):
 
     result = {}
